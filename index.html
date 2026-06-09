@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>财富自由状态测评｜金钱整理魔法课</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">6大维度探索你的财富管理能力</p>
+          <h1>财富自由状态测评</h1>
+          <p class="hero__text">看见你的金钱关系、收入机会、消费习惯、储蓄系统、风险规划和行动力，识别影响财富流动的关键环节，找到下一步行动方向。</p>
+          <div class="hero__brand">
+            <p class="teacher">
+              <span>时间、精力、金钱是人生三驾马车</span>
+              <span>理清金钱关系，财富自然流动</span>
+            </p>
+            <img src="./assets/logo-black-cropped.png" alt="金钱整理魔法课" class="brand-logo" />
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="profile-panel">
+        <div class="section-title">
+          <span>01</span>
+          <h2>先填写你的基本信息</h2>
+        </div>
+        <form id="profile-form" class="profile-form">
+          <label>
+            姓名
+            <input id="name" name="name" type="text" placeholder="请输入姓名或昵称" required />
+          </label>
+          <label>
+            年龄段
+            <select id="age" name="age" required>
+              <option value="">请选择</option>
+              <option>25 岁以下</option>
+              <option>25-30 岁</option>
+              <option>31-35 岁</option>
+              <option>36-40 岁</option>
+              <option>40 岁以上</option>
+            </select>
+          </label>
+          <fieldset>
+            <legend>身份，可多选</legend>
+            <div class="checks">
+              <label><input type="checkbox" name="identity" value="职场新人" />职场新人</label>
+              <label><input type="checkbox" name="identity" value="职场中层" />职场中层</label>
+              <label><input type="checkbox" name="identity" value="创业者" />创业者</label>
+              <label><input type="checkbox" name="identity" value="家庭 CFO" />家庭 CFO</label>
+              <label><input type="checkbox" name="identity" value="即将退休" />即将退休</label>
+            </div>
+          </fieldset>
+          <label>
+            微信号
+            <input id="wechat" name="wechat" type="text" placeholder="方便接收详细解读" required />
+          </label>
+          <label class="wide">
+            你最想解决的问题
+            <textarea id="concern" name="concern" rows="4" placeholder="例如：存不住钱、伴侣谈钱冲突、收入增长慢、投资不知道从哪开始" required></textarea>
+          </label>
+          <p class="privacy-note">信息仅用于测评解读和咨询联系。可添加微信 rrls2024 领取详细解读。</p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <span>02</span>
+          <h2>开始测评</h2>
+        </div>
+        <p class="hint">每题按 1-5 分选择：1 分非常不符合，5 分非常符合。共 30 题，大约 3-5 分钟完成，请按真实状态作答。</p>
+        <div id="questions" class="questions"></div>
+        <div class="actions">
+          <button id="submit" type="button">生成我的测评报告</button>
+          <button id="reset" type="button" class="secondary">重新填写</button>
+        </div>
+      </section>
+
+      <section class="result" id="result" hidden>
+        <div class="section-title">
+          <span>03</span>
+          <h2>你的财富测评报告</h2>
+        </div>
+        <div id="report-card" class="report-card"></div>
+        <div class="image-preview" id="image-preview" hidden>
+          <h3>报告图片预览</h3>
+          <p>长按图片可保存，或点击下方按钮下载报告图。底部二维码可用于添加微信领取详细解读。</p>
+          <img id="report-preview" alt="财富测评报告图片预览" />
+        </div>
+        <div class="actions">
+          <button id="download" type="button">生成并预览报告图片</button>
+          <a id="image-link" class="download-link" download="财富测评报告.png" hidden>下载报告图</a>
+        </div>
+        <canvas id="report-canvas" width="1080" height="1680" hidden></canvas>
+      </section>
+    </main>
+    <script src="./qr-data.js?v=20260609-1"></script>
+    <script src="./app.js?v=20260609-qr-title"></script>
+  </body>
+</html>
